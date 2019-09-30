@@ -50,7 +50,21 @@ print(agents)
 //: ## Step 3
 //: Create a function that calculates the total number of compromised agents. Inside the function, iterate over the array of agents to determine which ones are compromised. Return the total count.
 
+func compromisedAgents() -> Int {
+    var countCompromisedAgents = 0
+    
+    for agent in agents {
+        if agent.compromised {
+            countCompromisedAgents += 1
+        } else {
+            continue
+        }
+    }
+    
+    return countCompromisedAgents
+}
 
+print("Total number of compromised agents is: \(compromisedAgents()).")
 
 //: ## Step 4
 //: Call the above function to find the total number of compromised agents and then print a sentence that says "# agents have been compromised!" using string interpolation.
