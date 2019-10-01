@@ -137,10 +137,7 @@ func totalsOfLevelGroup() {
         default :
             print("No data")
         }
-        
     }
-
-    
     print("There are \(lowLevelCount) low level agents, \(midLevelCount) mid level agents, and \(highLevelCount) high level agents.")
 }
 
@@ -153,3 +150,17 @@ totalsOfLevelGroup()
 //: Create and call a function that prints the cover names and access levels of all agents, but the list should be sorted by access level, in ascending order.
 
 
+
+func sortedAgentList() {
+    
+    let sortedAgents = agents.sorted {
+        $0.accessLevel < $1.accessLevel
+    }
+    print(sortedAgents)
+    
+    for agent in sortedAgents {
+        print("Agent Name: \(agent.coverName), Access Level: \(agent.accessLevel)")
+    }
+}
+
+sortedAgentList()
